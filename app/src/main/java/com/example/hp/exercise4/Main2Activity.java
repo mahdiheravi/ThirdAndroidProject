@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -17,16 +18,16 @@ public class Main2Activity extends AppCompatActivity {
         String email = myintent.getStringExtra("myemail");
         int age = myintent.getIntExtra("myage",0);
 
-        EditText myname = (EditText) findViewById(R.id.name);
+        TextView myname = (TextView) findViewById(R.id.name);
         myname.setText(name);
 
-        EditText myemail = (EditText) findViewById(R.id.email);
-        myemail.setText(name);
+        TextView myemail = (TextView) findViewById(R.id.email);
+        myemail.setText(email);
 
-        EditText myfamily = (EditText) findViewById(R.id.family);
-        myfamily.setText(name);
+        TextView myfamily = (TextView) findViewById(R.id.family);
+        myfamily.setText(family);
 
-        EditText myage = (EditText) findViewById(R.id.age);
+        TextView myage = (TextView) findViewById(R.id.age);
         myage.setText(String.valueOf(age));
 
 
