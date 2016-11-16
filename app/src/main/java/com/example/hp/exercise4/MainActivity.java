@@ -28,23 +28,29 @@ public class MainActivity extends AppCompatActivity {
                 String email = txtemail.getText().toString();
 
                 EditText txtage = (EditText) findViewById(R.id.age);
-                int age = Integer.parseInt(txtage.getText().toString());
 
-                if (age >= 5 && age <= 100)
-                    if (!name.equals("") && !family.equals("") && !email.equals(""))
-                    {
-                        Intent myintent = new Intent(MainActivity.this,Main2Activity.class);
-                        myintent.putExtra("myname",name);
-                        myintent.putExtra("myfamily",family);
-                        myintent.putExtra("myage",age);
-                        myintent.putExtra("myemail",email);
-                        startActivity(myintent);
+
+
+                    if (!name.equals("") && !family.equals("") && !email.equals("") && !txtage.equals("")) {
+
+                        int age = Integer.parseInt(txtage.getText().toString());
+                        if (age >= 5 && age <= 100)
+                        {
+                            Intent myintent = new Intent(MainActivity.this,Main2Activity.class);
+                            myintent.putExtra("myname",name);
+                            myintent.putExtra("myfamily",family);
+                            myintent.putExtra("myage",age);
+                            myintent.putExtra("myemail",email);
+                            startActivity(myintent);
+                        }
+                        else
+                            Toast.makeText(MainActivity.this, "محدوده سنی بین 5 تا 100 سال می باشد", Toast.LENGTH_LONG).show();
+
 
                     }
                     else
                         Toast.makeText(MainActivity.this, "تمام اطلاعات را وارد کنید", Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(MainActivity.this, "محدوده سنی بین 5 تا 100 سال می باشد", Toast.LENGTH_LONG).show();
+
 
             }
         });
